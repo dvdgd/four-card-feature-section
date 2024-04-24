@@ -1,0 +1,110 @@
+body {
+  height: 100svh;
+  background-color: var(--very-light-gray);
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 5rem 1.5rem;
+  font-family: Poppins, sans-serif;
+  font-size: .938; /* ~15px */
+  color: var(--grayish-blue);
+}
+
+h1 {
+  font-weight: 200;
+  font-size: 2rem;
+  color: var(--very-dark-blue);
+  text-align: center;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 2rem;
+  color: var(--very-dark-blue);
+  text-align: center;
+}
+
+header p {
+  padding-top: 1rem;
+  max-width: 580px;
+  text-align: center;
+}
+
+main {
+  padding: 5rem 0;
+  display: grid;
+  gap: 2rem;
+
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: 
+    "start center-top end"
+    "start center-bottom end";
+  align-items: center;
+}
+
+article.card {
+  max-width: 370px;
+  width: 100%;
+  padding: 2rem;
+
+  border-radius: .4rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+}
+
+article.card h3, p {
+  text-align: start;
+}
+
+article.card h3 {
+  padding-bottom: 1rem;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--very-dark-blue);
+}
+
+article.card figure {
+  padding-top: 2rem;
+
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+main > article:nth-child(1) {
+  border-top: .3rem solid var(--cyan);
+  grid-area: start;
+}
+
+main > article:nth-child(2) {
+  border-top: .3rem solid var(--red);  
+  grid-area: center-top;
+}
+
+main > article:nth-child(3) {
+  border-top: .3rem solid var(--orange);
+  grid-area: center-bottom;
+}
+
+main > article:nth-child(4) {
+  border-top: .3rem solid var(--blue);
+  grid-area: end;
+}
+
+@media screen and (max-width: 1024px) {
+  main {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: none;
+    grid-template-areas: none;
+  }
+
+  main > article.card {
+    grid-area: initial !important;
+  }
+
+  header h1, h2 {
+    font-size: 1.65rem;
+  }
+}
