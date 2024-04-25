@@ -51,7 +51,7 @@ article.card {
   padding: 2rem;
 
   border-radius: .4rem;
-  box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .1);
 }
 
 article.card h3, p {
